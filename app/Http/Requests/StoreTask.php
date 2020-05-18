@@ -27,6 +27,7 @@ class StoreTask extends FormRequest
             //
             'name' => 'required|string|max:100',
             'habit_id' => 'required',
+            'cate_id' => 'required'
         ];
     }
 }

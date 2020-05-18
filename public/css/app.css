@@ -662,7 +662,7 @@ pre code {
   .container-md,
   .container-sm,
   .container {
-    max-width: 1140px;
+    max-width: 970px;
   }
 }
 
@@ -10939,7 +10939,7 @@ table {
   border-collapse: collapse;
   margin: 0 auto;
   padding: 0;
-  width: 800px;
+  width: 850px;
   table-layout: fixed;
   text-align: center;
   margin-top: 35px;

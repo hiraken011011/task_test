@@ -15,7 +15,7 @@ class TaskSeeder extends Seeder
         DB::table('tasks')->insert([
             [
                 'id' => 1,
-                'name' => '15分の自習を4回',
+                'name' => "15分の自習を4回",
                 'deadline' => '2019-01-01 00:00:00',
                 'status' => '0',
                 'habit_id' => 1,
@@ -24,7 +24,7 @@ class TaskSeeder extends Seeder
                 'updated_at' => '2019-01-01 00:00:00',
             ],[
                 'id' => 2,
-                'name' => '近所の川でランニング',
+                'name' => "近所の川でランニング",
                 'deadline' => '2019-02-01 00:00:00',
                 'status' => '0',
                 'habit_id' => 2,
@@ -33,7 +33,7 @@ class TaskSeeder extends Seeder
                 'updated_at' => '2019-02-02 00:00:00',
             ],[
                 'id' => 3,
-                'name' => '明日の準備',
+                'name' => "明日の準備",
                 'deadline' => '2019-03-01 00:00:00',
                 'status' => '1',
                 'habit_id' => 3,
