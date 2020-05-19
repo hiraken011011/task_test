@@ -13,15 +13,15 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'name' => 'あああ',
+                'name' => 'テストユーザー1',
                 'email' => 'test1@test.com',
                 'password' => Hash::make('password1'),
             ],[
-                'name' => 'いいい',
+                'name' => 'テストユーザー2',
                 'email' => 'test2@test.com',
                 'password' => Hash::make('password2'),
             ],[
-                'name' => 'ううう',
+                'name' => 'テストユーザー3',
                 'email' => 'test3@test.com',
                 'password' => Hash::make('password3'),
             ]

@@ -33,9 +33,9 @@
                         <table class="task_input" style="margin-top:30px;">
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width:70%">カテゴリー名</th>
+                                    <th scope="col" style="width:50%">カテゴリー名</th>
                                     <th scope="col" style="width:30%">カテゴリー色</th>
-                                    <th scope="col" style="width:30%">登録</th>
+                                    <th scope="col" style="width:20%">登録</th>
                                 </tr>
                             </thead>
                             <tbody>
