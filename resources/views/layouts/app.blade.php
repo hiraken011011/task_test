@@ -33,7 +33,7 @@
     <div id="app">
         <nav class="navbar navbar-expand-md navbar-light shadow-sm pb-2 fixed-top">
             <div class="container">
-                <a class="navbar-brand" href="{{ url('/home') }}">
+                <a class="navbar-brand" href="{{ url('/tasks/index') }}">
 
                     <div class="d-flex align-items-center">
 
