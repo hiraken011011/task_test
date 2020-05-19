@@ -133,7 +133,18 @@
                                     <th scope="col" style="width:40%">タスク名</th>
                                     <th scope="col" style="width:20%">既習慣</th>
                                     <th scope="col" style="width:13%">カテゴリー</th>
-                                    <th scope="col" style="width:20%">期限日</th>
+                                    <th scope="col" style="width:20%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            期限日
+                                            @if($order === "desc")
+                                                <input type="hidden" name="order" value="asc">
+                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▼</button>
+                                                @else
+                                                <input type="hidden" name="order" value="desc">
+                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
                                     <th scope="col" style="width:7%">編集</th>
                                 </tr>
                             </thead>
@@ -144,14 +155,21 @@
 
                                         <th class="task_name"><div style="padding-left:10px;">{{ $value->name }}</div></th>
 
+                                        <!-- 習慣 -->
                                         @if($value->habit_name)
                                             <td data-label="習慣" class="txt">{{ $value->habit_name }}</td>
                                         @else
                                             <td data-label="習慣" class="txt">なし</td>
                                         @endif
 
-                                        <td data-label="分類" class="txt"><div style="color:{{ $value->color_code }}">{{ $value->cate_name }}</div></td>
+                                        <!-- カテゴリー -->
+                                        @if($value->cate_name)
+                                            <td data-label="分類" class="txt"><div style="color:{{ $value->color_code }}">{{ $value->cate_name }}</div></td>
+                                        @else
+                                            <td data-label="分類" class="txt">なし</td>
+                                        @endif
 
+                                        <!-- 期限 -->
                                         @if($value->deadline)
                                             <td data-label="期限" class="txt">{{ $value->deadline }}</td>
                                         @else
@@ -174,7 +192,18 @@
                                     <th scope="col" style="width:40%">タスク名</th>
                                     <th scope="col" style="width:20%">既習慣</th>
                                     <th scope="col" style="width:13%">カテゴリー</th>
-                                    <th scope="col" style="width:20%">期限日</th>
+                                    <th scope="col" style="width:20%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            期限日
+                                            @if($done_order === "desc")
+                                                <input type="hidden" name="done_order" value="asc">
+                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▼</button>
+                                                @else
+                                                <input type="hidden" name="done_order" value="desc">
+                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
                                     <th scope="col" style="width:7%">編集</th>
                                 </tr>
                             </thead>
@@ -184,9 +213,22 @@
                                         <!-- <td><a href="{{ route('tasks.store', ['id' => $value->id ]) }}">完了{{ $value->status }}</a></td> -->
 
                                         <th class="task_name"><div style="padding-left:10px;">{{ $value->name }}</div></th>
-                                        <td data-label="習慣" class="txt">{{ $value->habit_name }}</td>
-                                        <td data-label="分類" class="txt"><div style="color:{{ $value->color_code }}">{{ $value->cate_name }}</div></td>
 
+                                        <!-- 習慣 -->
+                                        @if($value->habit_name)
+                                            <td data-label="習慣" class="txt">{{ $value->habit_name }}</td>
+                                        @else
+                                            <td data-label="習慣" class="txt">なし</td>
+                                        @endif
+
+                                        <!-- カテゴリー -->
+                                        @if($value->cate_name)
+                                            <td data-label="分類" class="txt"><div style="color:{{ $value->color_code }}">{{ $value->cate_name }}</div></td>
+                                        @else
+                                            <td data-label="分類" class="txt">なし</td>
+                                        @endif
+
+                                        <!-- 期限 -->
                                         @if($value->deadline)
                                             <td data-label="期限" class="txt">{{ $value->deadline }}</td>
                                         @else

@@ -13,13 +13,27 @@ use App\Models\Color;
 
 class TaskController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
         // $habit_id = Task::all()->habit->id;
         // $cate_id = Task::find($id)->cate->id;
 
         $habits = DB::table('habits')->get();
         $cates = DB::table('cates')->get();
+
+        // 並び替え
+        $order = $request->input('order');
+        // デフォルトはasc
+        if(empty($order)){
+           $order = "asc";
+        }
+
+        // 並び替え
+        $done_order = $request->input('done_order');
+        // デフォルトはasc
+        if(empty($done_order)){
+           $done_order = "asc";
+        }
 
         // // 状態が "1" のタスクを取得。
         $todo = DB::table('tasks')
@@ -41,8 +55,9 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
+        ->orderBy('created_at', $order)
         ->get();
-
+        
         // // 状態が "1" のタスクを取得。
         $done_todo = DB::table('tasks')
         ->where('status', '1')
@@ -63,9 +78,10 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
+        ->orderBy('created_at', $done_order)
         ->get();
-        
-        return view('tasks.index', compact('habits','cates','todo','done_todo'));
+            
+        return view('tasks.index', compact('habits','cates','todo','done_todo','order','done_order'));
     }
 
     /**
