@@ -153,7 +153,9 @@
                                     <tr>
                                         <!-- <td><a href="{{ route('tasks.store', ['id' => $value->id ]) }}">完了{{ $value->status }}</a></td> -->
 
-                                        <th class="task_name"><div style="padding-left:10px;">{{ $value->name }}</div></th>
+                                        <th class="task_name">
+                                        <div style="padding-left:10px;"><img class="pb-1 mr-3" alt="どんぐりアイコン" src="{{ asset('/images/donguri_task.svg') }}" style="width:15px;">{{ $value->name }}</div>
+                                        </th>
 
                                         <!-- 習慣 -->
                                         @if($value->habit_name)
@@ -212,7 +214,8 @@
                                     <tr>
                                         <!-- <td><a href="{{ route('tasks.store', ['id' => $value->id ]) }}">完了{{ $value->status }}</a></td> -->
 
-                                        <th class="task_name"><div style="padding-left:10px;">{{ $value->name }}</div></th>
+                                        <th class="task_name"><div style="padding-left:10px;">
+                                        <img class="pb-1 mr-3" alt="どんぐりアイコン" src="{{ asset('/images/donguri_task.svg') }}" style="width:15px;">{{ $value->name }}</div></th>
 
                                         <!-- 習慣 -->
                                         @if($value->habit_name)

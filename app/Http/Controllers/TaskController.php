@@ -35,6 +35,12 @@ class TaskController extends Controller
            $done_order = "asc";
         }
 
+
+        // $order_habit = "habits_table_id";
+        // $order_cate = "cate_table_id";
+        // $order_dead = "deadline";
+
+
         // // 状態が "1" のタスクを取得。
         $todo = DB::table('tasks')
         ->where('status', '0')
@@ -55,7 +61,7 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
-        ->orderBy('created_at', $order)
+        ->orderBy('deadline', $order)
         ->get();
         
         // // 状態が "1" のタスクを取得。
@@ -78,7 +84,7 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
-        ->orderBy('created_at', $done_order)
+        ->orderBy('deadline', $done_order)
         ->get();
             
         return view('tasks.index', compact('habits','cates','todo','done_todo','order','done_order'));
