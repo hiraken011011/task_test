@@ -173,7 +173,7 @@
 
                                         <!-- 期限 -->
                                         @if($value->deadline)
-                                            <td data-label="期限" class="txt">{{ $value->deadline }}</td>
+                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}</td>
                                         @else
                                             <td data-label="期限" class="txt">なし</td>
                                         @endif
@@ -233,7 +233,7 @@
 
                                         <!-- 期限 -->
                                         @if($value->deadline)
-                                            <td data-label="期限" class="txt">{{ $value->deadline }}</td>
+                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}</td>
                                         @else
                                             <td data-label="期限" class="txt">なし</td>
                                         @endif
