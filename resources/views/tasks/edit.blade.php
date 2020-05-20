@@ -67,6 +67,7 @@
                                         <!-- カテゴリー -->
                                         <td data-label="分類" class="txt">
                                             <select class="custom-select custom-select-md" name="cate_id">
+
                                                 @foreach($cate_list as $value)
                                                     @if($value->id === $task->cate_id)
                                                         <option value="{{ $value->id }}" selected>{{ $value->cate_name }}</option>
