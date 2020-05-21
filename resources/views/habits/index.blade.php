@@ -77,7 +77,7 @@
                             <tbody>
                                 @foreach($habits as $value)
                                     <tr>
-                                        <th class="task_name">{{ $value->id }}<div style="padding-left:10px;">{{ $value->habit_name }}</div></th>
+                                        <th class="task_name"><div style="padding-left:10px;">{{ $value->habit_name }}</div></th>
                                         <td data-label="編集" class="txt"><a href="{{ route('habits.edit', ['id' => $value->id ]) }}">Edit</a></td>
                                     </tr>
                                 @endforeach
