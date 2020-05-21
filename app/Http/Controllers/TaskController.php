@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 use App\Services\CheckFormData;
 use App\Http\Requests\StoreTask;
 
@@ -17,6 +18,10 @@ class TaskController extends Controller
     {
         // $habit_id = Task::all()->habit->id;
         // $cate_id = Task::find($id)->cate->id;
+
+        $user_id = Auth::id();
+        // dd($user_id);
+
         $habits = DB::table('habits')->get();
         $cates = DB::table('cates')->get();
 
@@ -56,12 +61,14 @@ class TaskController extends Controller
         // // 状態が "1" のタスクを取得。
         $todo = DB::table('tasks')
         ->where('status', '0')
+        ->where('user_id', $user_id)
         ->leftJoin('habits', 'tasks.habit_id', '=', 'habits.id')
         ->leftJoin('cates', 'tasks.cate_id', '=', 'cates.id')
         ->leftJoin('colors', 'cates.color_id', '=', 'colors.id')
+        ->leftJoin('users', 'tasks.user_id', '=', 'users.id')
         ->select(
             'tasks.id as id',
-            'name',
+            'tasks.name as name',
             'deadline',
             'status',
             'habit_id',
@@ -69,6 +76,7 @@ class TaskController extends Controller
             'tasks.created_at as created_at',
             'habits.id as habits_table_id',
             'habit_name',
+            'users.id as user_table_id',
             'cates.id as cate_table_id',
             'cate_name',
             'cates.color_id',
@@ -79,12 +87,14 @@ class TaskController extends Controller
         // // 状態が "1" のタスクを取得。
         $done_todo = DB::table('tasks')
         ->where('status', '1')
+        ->where('user_id', $user_id)
         ->leftJoin('habits', 'tasks.habit_id', '=', 'habits.id')
         ->leftJoin('cates', 'tasks.cate_id', '=', 'cates.id')
         ->leftJoin('colors', 'cates.color_id', '=', 'colors.id')
+        ->leftJoin('users', 'tasks.user_id', '=', 'users.id')
         ->select(
             'tasks.id as id',
-            'name',
+            'tasks.name as name',
             'deadline',
             'status',
             'habit_id',
@@ -92,6 +102,7 @@ class TaskController extends Controller
             'tasks.created_at as created_at',
             'habits.id as habits_table_id',
             'habit_name',
+            'users.id as user_table_id',
             'cates.id as cate_table_id',
             'cate_name',
             'cates.color_id',
@@ -99,7 +110,7 @@ class TaskController extends Controller
         ->orderBy($order_name, $order_by)
         ->get();
             
-        return view('tasks.index', compact('habits','cates','todo','done_todo','order','cate_order','habit_order','name_order'));
+        return view('tasks.index', compact('habits','cates','todo','done_todo','order','cate_order','habit_order','name_order','user_id'));
     }
 
     /**
@@ -131,6 +142,7 @@ class TaskController extends Controller
         $task->name = $request->input('name');
         $task->habit_id = $request->input('habit_id');
         $task->cate_id = $request->input('cate_id');
+        $task->user_id = $request->input('user_id');
         $task->deadline = $request->input('deadline');
 
         $task->save(); // saveというメソッドで保存

@@ -20,6 +20,7 @@ class CreateTasksTable extends Migration
             $table->string('status'); // 状態
             $table->unsignedBigInteger('habit_id');
             $table->unsignedBigInteger('cate_id');
+            $table->unsignedBigInteger('user_id');
             $table->timestamps();
 
             // $table->foreign('habit_id')->references('id')->on('habits');

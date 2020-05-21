@@ -78,6 +78,8 @@
                                         </td>
                                         <!-- 完了/未完了 -->
                                         <input type="hidden" name="status" value="0">
+
+                                        <input type="hidden" name="user_id" value="{{ $user_id }}">
                                         <!-- ボタン -->
                                         <td data-label="ボタン" class="txt">
                                             <div class="text-center"><input class="btn btn-info" type="submit" value="登録"></div>

@@ -20,6 +20,7 @@ class TaskSeeder extends Seeder
                 'status' => '0',
                 'habit_id' => 1,
                 'cate_id' => 1,
+                'user_id' => 1,
                 'created_at' => '2020-05-01 00:00:00',
                 'updated_at' => '2020-05-01 00:00:00',
             ],[
@@ -29,6 +30,7 @@ class TaskSeeder extends Seeder
                 'status' => '0',
                 'habit_id' => 2,
                 'cate_id' => 2,
+                'user_id' => 1,
                 'created_at' => '2020-05-02 00:00:00',
                 'updated_at' => '2020-05-02 00:00:00',
             ],[
@@ -38,6 +40,7 @@ class TaskSeeder extends Seeder
                 'status' => '1',
                 'habit_id' => 7,
                 'cate_id' => 7,
+                'user_id' => 1,
                 'created_at' => '2020-05-03 00:00:00',
                 'updated_at' => '2020-05-03 00:00:00',
             ],[
@@ -47,6 +50,7 @@ class TaskSeeder extends Seeder
                 'status' => '1',
                 'habit_id' => 6,
                 'cate_id' => 5,
+                'user_id' => 1,
                 'created_at' => '2020-05-04 00:00:00',
                 'updated_at' => '2020-05-04 00:00:00',
             ],[
@@ -56,6 +60,7 @@ class TaskSeeder extends Seeder
                 'status' => '0',
                 'habit_id' => 5,
                 'cate_id' => 3,
+                'user_id' => 1,
                 'created_at' => '2020-05-05 00:00:00',
                 'updated_at' => '2020-05-05 00:00:00',
             ],[
@@ -65,6 +70,7 @@ class TaskSeeder extends Seeder
                 'status' => '0',
                 'habit_id' => 3,
                 'cate_id' => 1,
+                'user_id' => 1,
                 'created_at' => '2020-05-06 00:00:00',
                 'updated_at' => '2020-05-06 00:00:00',
             ],[
@@ -74,6 +80,7 @@ class TaskSeeder extends Seeder
                 'status' => '1',
                 'habit_id' => 4,
                 'cate_id' => 4,
+                'user_id' => 1,
                 'created_at' => '2020-05-07 00:00:00',
                 'updated_at' => '2020-05-07 00:00:00'
             ]
