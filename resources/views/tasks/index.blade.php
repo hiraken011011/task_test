@@ -151,7 +151,7 @@
                                     </th>
                                     <th scope="col" style="width:13%">
                                         <form method="GET" action="{{ route('tasks.index') }}">
-                                            カテゴリ-
+                                            カテゴリ
                                             @if($cate_order === "desc")
                                                 <button type="submit" name="cate_order" value="asc">▼</button>
                                             @else
