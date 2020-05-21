@@ -17,25 +17,37 @@ class TaskController extends Controller
     {
         // $habit_id = Task::all()->habit->id;
         // $cate_id = Task::find($id)->cate->id;
-
         $habits = DB::table('habits')->get();
         $cates = DB::table('cates')->get();
 
         // 並び替え
         $order = $request->input('order');
-        // デフォルトはasc
-        if(empty($order)){
-           $order = "asc";
+        $cate_order = $request->input('cate_order');
+        $habit_order = $request->input('habit_order');
+        $name_order = $request->input('name_order');
+        // 
+        if(!empty($order)){
+            $order_name = "deadline";
+            $order_by = $order;
+        }
+        if(!empty($cate_order)){
+            $order_name = "cate_id";
+            $order_by = $cate_order;
+        }
+        if(!empty($habit_order)){
+            $order_name = "habit_id";
+            $order_by = $habit_order;
+        }
+        if(!empty($name_order)){
+            $order_name = "name";
+            $order_by = $name_order;
+        }
+        if(empty($order || $cate_order || $habit_order || $name_order)){ // || $cate_order
+            $order_name = "tasks.id";
+            $order_by = "asc";
         }
 
-        // 並び替え
-        $done_order = $request->input('done_order');
-        // デフォルトはasc
-        if(empty($done_order)){
-           $done_order = "asc";
-        }
-
-
+        
         // $order_habit = "habits_table_id";
         // $order_cate = "cate_table_id";
         // $order_dead = "deadline";
@@ -61,7 +73,7 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
-        ->orderBy('deadline', $order)
+        ->orderBy($order_name, $order_by)
         ->get();
         
         // // 状態が "1" のタスクを取得。
@@ -84,10 +96,10 @@ class TaskController extends Controller
             'cate_name',
             'cates.color_id',
             'color_code')
-        ->orderBy('deadline', $done_order)
+        ->orderBy($order_name, $order_by)
         ->get();
             
-        return view('tasks.index', compact('habits','cates','todo','done_todo','order','done_order'));
+        return view('tasks.index', compact('habits','cates','todo','done_todo','order','cate_order','habit_order','name_order'));
     }
 
     /**
@@ -112,7 +124,6 @@ class TaskController extends Controller
         //
         // $habit_id = Task::find($id)->habit->id;
         // $cate_id = Task::find($id)->cate->id;
-
 
         $task = new Task;
 

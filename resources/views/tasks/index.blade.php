@@ -82,7 +82,6 @@
                                         <td data-label="ボタン" class="txt">
                                             <div class="text-center"><input class="btn btn-info" type="submit" value="登録"></div>
                                         </td>
-
                                     </tr>
                                 </form>
                             </tbody>
@@ -130,18 +129,43 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width:40%">タスク名</th>
-                                    <th scope="col" style="width:20%">既習慣</th>
-                                    <th scope="col" style="width:13%">カテゴリー</th>
+                                    <th scope="col" style="width:40%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            タスク名
+                                            @if($name_order === "desc")
+                                                <button type="submit" name="name_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="name_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
+                                    <th scope="col" style="width:20%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            既習慣
+                                            @if($habit_order === "desc")
+                                                <button type="submit" name="habit_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="habit_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
+                                    <th scope="col" style="width:13%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            カテゴリ-
+                                            @if($cate_order === "desc")
+                                                <button type="submit" name="cate_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="cate_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
                                     <th scope="col" style="width:20%">
                                         <form method="GET" action="{{ route('tasks.index') }}">
                                             期限日
                                             @if($order === "desc")
-                                                <input type="hidden" name="order" value="asc">
-                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▼</button>
-                                                @else
-                                                <input type="hidden" name="order" value="desc">
-                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▲</button>
+                                                <button type="submit" name="order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="order" value="desc">▲</button>
                                             @endif
                                         </form>
                                     </th>
@@ -173,7 +197,7 @@
 
                                         <!-- 期限 -->
                                         @if($value->deadline)
-                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}</td>
+                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}<br>{{ date('G:i', strtotime($value->deadline)) }}</td>
                                         @else
                                             <td data-label="期限" class="txt">なし</td>
                                         @endif
@@ -191,18 +215,43 @@
                         <table>
                             <thead>
                                 <tr>
-                                    <th scope="col" style="width:40%">タスク名</th>
-                                    <th scope="col" style="width:20%">既習慣</th>
-                                    <th scope="col" style="width:13%">カテゴリー</th>
+                                    <th scope="col" style="width:40%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            タスク名
+                                            @if($name_order === "desc")
+                                                <button type="submit" name="name_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="name_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
+                                    <th scope="col" style="width:20%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            既習慣
+                                            @if($habit_order === "desc")
+                                                <button type="submit" name="habit_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="habit_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
+                                    <th scope="col" style="width:13%">
+                                        <form method="GET" action="{{ route('tasks.index') }}">
+                                            カテゴリ-
+                                            @if($cate_order === "desc")
+                                                <button type="submit" name="cate_order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="cate_order" value="desc">▲</button>
+                                            @endif
+                                        </form>
+                                    </th>
                                     <th scope="col" style="width:20%">
                                         <form method="GET" action="{{ route('tasks.index') }}">
                                             期限日
-                                            @if($done_order === "desc")
-                                                <input type="hidden" name="done_order" value="asc">
-                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▼</button>
-                                                @else
-                                                <input type="hidden" name="done_order" value="desc">
-                                                <button type="submit" class="btn btn-warning" style="font-size:3px; width:28px; padding:2px;">▲</button>
+                                            @if($order === "desc")
+                                                <button type="submit" name="order" value="asc">▼</button>
+                                            @else
+                                                <button type="submit" name="order" value="desc">▲</button>
                                             @endif
                                         </form>
                                     </th>
@@ -233,7 +282,7 @@
 
                                         <!-- 期限 -->
                                         @if($value->deadline)
-                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}</td>
+                                            <td data-label="期限" class="txt">{{ date('Y年 n月j日', strtotime($value->deadline)) }}<br>{{ date('G:i', strtotime($value->deadline)) }}</td>
                                         @else
                                             <td data-label="期限" class="txt">なし</td>
                                         @endif
