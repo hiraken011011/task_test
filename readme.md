@@ -12,6 +12,7 @@
 開発言語
 - Laravel
 - PostgreSQL
+<br>
 
 デプロイしたもの
 - **[ToDoリス](http://todo-risu.herokuapp.com/)**
