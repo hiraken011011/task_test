@@ -11,8 +11,8 @@
 
 .
 
-- a
+開発
+- Laravel
+- PostgreSQL
 
-[documentation](http://todo-risu.herokuapp.com/)
-
-- **[Vehikl](https://vehikl.com/)**
+- **[ToDoリス](http://todo-risu.herokuapp.com/)**
