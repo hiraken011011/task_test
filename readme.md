@@ -13,5 +13,5 @@
 - Laravel
 - PostgreSQL
 
-URL
+デプロイしたもの
 - **[ToDoリス](http://todo-risu.herokuapp.com/)**
