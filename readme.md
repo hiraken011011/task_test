@@ -9,10 +9,10 @@
 
 ## About ToDoリス
 
-開発言語
+## 開発言語
 - Laravel
 - PostgreSQL
 <br>
 
-デプロイしたもの
+## デプロイしたもの
 - **[ToDoリス](http://todo-risu.herokuapp.com/)**
