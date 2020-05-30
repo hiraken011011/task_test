@@ -6,7 +6,7 @@
         <div class="col-md-12" style="padding-top:65px">
             <div class="card">
 
-                <div class="card-header"><img class="pb-1 mr-2" alt="どんぐりアイコン" src="{{ asset('/images/donguri.svg') }}" style="width: 20px;">カテゴリー編集</div>
+                <div class="card-header"><img class="pb-1 mr-2" src="{{ asset('/images/donguri.svg') }}" style="width: 20px;">カテゴリー編集</div>
 
                 <div class="card-body">
 

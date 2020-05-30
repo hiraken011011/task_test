@@ -21,15 +21,6 @@ Route::get('/home', 'TaskController@index')->name('tasks.index');
 
 Route::get('cates/index', 'CateController@index');
 
-
-// // カテゴリー
-// Route::group(['prefix' => 'category', 'middleware' => 'auth'], function(){
-//     Route::get('index', 'CategoryController@index')->name('category.index');
-// });
-
-// index.blade.php へ
-// Route::get('task/index', 'TaskController@index');
-
 // タスク
 Route::group(['prefix' => 'tasks', 'middleware' => 'auth'], function(){
     Route::get('index', 'TaskController@index')->name('tasks.index');
@@ -60,18 +51,6 @@ Route::group(['prefix' => 'cates', 'middleware' => 'auth'], function(){
     Route::post('destroy/{id}', 'CateController@destroy')->name('cates.destroy');
 });
 
-// Route::group(['prefix' => 'contact', 'middleware' => 'auth'], function(){
-//     Route::get('index', 'ContactFormController@index')->name('contact.index');
-//     Route::get('create', 'ContactFormController@create')->name('contact.create');
-//     Route::post('store', 'ContactFormController@store')->name('contact.store');
-//     Route::get('show/{id}', 'ContactFormController@show')->name('contact.show');
-//     Route::get('edit/{id}', 'ContactFormController@edit')->name('contact.edit');
-//     Route::post('update/{id}', 'ContactFormController@update')->name('contact.update');
-//     Route::post('destroy/{id}', 'ContactFormController@destroy')->name('contact.destroy');
-// });
-
-
-// これでログインしていないとアクセスできなくなる
 
 
 Auth::routes(); // 認証：ログインしたら

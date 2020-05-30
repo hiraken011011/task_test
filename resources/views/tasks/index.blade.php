@@ -12,7 +12,7 @@
         <div class="col-md-12" style="padding-top:65px">
 
             <div class="card mb-4">
-                <div class="card-header"><img class="pb-1 mr-2" alt="どんぐりアイコン" src="{{ asset('/images/happa.svg') }}" style="width: 20px;">タスク登録</div>
+                <div class="card-header"><img class="pb-1 mr-2" src="{{ asset('/images/happa.svg') }}" style="width: 20px;">タスク登録</div>
 
                 <div class="card-body">
 

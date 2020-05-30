@@ -7,7 +7,7 @@
         <!--  -->
         <div class="col-md-12" style="padding-top:65px">
             <div class="card mb-4">
-                <div class="card-header"><img class="pb-1 mr-2" alt="どんぐりアイコン" src="{{ asset('/images/happa.svg') }}" style="width: 20px;">カテゴリー登録</div>
+                <div class="card-header"><img class="pb-1 mr-2" src="{{ asset('/images/happa.svg') }}" style="width: 20px;">カテゴリー登録</div>
 
                 <div class="card-body">
 
@@ -72,7 +72,7 @@
         <!-- タスク一覧 -->
         <div class="col-md-12">
             <div class="card mb-4">
-                <div class="card-header"><img class="pb-1 mr-2" alt="どんぐりアイコン" src="{{ asset('/images/donguri.svg') }}" style="width: 20px;">カテゴリー一覧</div>
+                <div class="card-header"><img class="pb-1 mr-2" src="{{ asset('/images/donguri.svg') }}" style="width: 20px;">カテゴリー一覧</div>
 
                 <div class="card-body">
 
