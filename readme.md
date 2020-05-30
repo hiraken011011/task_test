@@ -16,4 +16,4 @@
 <br>
 
 ## デプロイしたもの
-- **[ToDoリス](http://todo-risu.herokuapp.com/){:target="_blank"}**
+- **[ToDoリス](http://todo-risu.herokuapp.com/)**
