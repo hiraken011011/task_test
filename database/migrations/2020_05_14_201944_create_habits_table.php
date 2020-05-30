@@ -14,7 +14,7 @@ class CreateHabitsTable extends Migration
     public function up()
     {
         Schema::create('habits', function (Blueprint $table) {
-            $table->bigIncrements('id');
+            $table->bigIncrements('id'); // 習慣ID
             $table->string('habit_name'); // 習慣名
             $table->timestamps();
         });

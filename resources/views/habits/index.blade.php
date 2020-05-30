@@ -52,12 +52,10 @@
                                 </form>
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>
         </div>
-
 
         <!-- タスク一覧 -->
         <div class="col-md-12">

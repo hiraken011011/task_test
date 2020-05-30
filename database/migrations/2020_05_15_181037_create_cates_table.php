@@ -14,9 +14,9 @@ class CreateCatesTable extends Migration
     public function up()
     {
         Schema::create('cates', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->string('cate_name');
-            $table->unsignedBigInteger('color_id');
+            $table->bigIncrements('id'); // カテゴリーID
+            $table->string('cate_name'); // カテゴリー名
+            $table->unsignedBigInteger('color_id'); // カラーID
             $table->timestamps();
         });
     }

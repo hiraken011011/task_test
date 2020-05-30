@@ -18,9 +18,9 @@ class CreateTasksTable extends Migration
             $table->string('name'); // タスク名
             $table->dateTime('deadline')->nullable(); // 期限日
             $table->string('status'); // 状態
-            $table->unsignedBigInteger('habit_id');
-            $table->unsignedBigInteger('cate_id');
-            $table->unsignedBigInteger('user_id');
+            $table->unsignedBigInteger('habit_id'); // 習慣ID
+            $table->unsignedBigInteger('cate_id'); // カテゴリーID
+            $table->unsignedBigInteger('user_id'); // ユーザーID
             $table->timestamps();
 
             // $table->foreign('habit_id')->references('id')->on('habits');
